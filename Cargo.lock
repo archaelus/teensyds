@@ -1,34 +1,17 @@
 [root]
-name = "teensyr"
+name = "teensycli"
 version = "0.1.0"
 dependencies = [
- "ioreg 0.1.0 (git+https://github.com/Gyscos/zinc.git?branch=crazy)",
- "macro_platformtree 0.1.0 (git+https://github.com/Gyscos/zinc.git?branch=crazy)",
- "platformtree 0.1.0 (git+https://github.com/Gyscos/zinc.git?branch=crazy)",
  "rust-libcore 0.0.3 (registry+https://github.com/rust-lang/crates.io-index)",
- "zinc 0.1.0 (git+https://github.com/Gyscos/zinc.git?branch=crazy)",
+ "zinc 0.1.0",
 ]
 
 [[package]]
 name = "ioreg"
 version = "0.1.0"
-source = "git+https://github.com/Gyscos/zinc.git?branch=crazy#14dce59267cb38d51b19584d20b2796dcc67b98d"
 dependencies = [
- "syntaxext_lint 0.1.4 (git+https://github.com/Gyscos/syntaxext_lint)",
+ "syntaxext_lint 0.1.4 (git+https://github.com/archaelus/syntaxext_lint)",
 ]
-
-[[package]]
-name = "macro_platformtree"
-version = "0.1.0"
-source = "git+https://github.com/Gyscos/zinc.git?branch=crazy#14dce59267cb38d51b19584d20b2796dcc67b98d"
-dependencies = [
- "platformtree 0.1.0 (git+https://github.com/Gyscos/zinc.git?branch=crazy)",
-]
-
-[[package]]
-name = "platformtree"
-version = "0.1.0"
-source = "git+https://github.com/Gyscos/zinc.git?branch=crazy#14dce59267cb38d51b19584d20b2796dcc67b98d"
 
 [[package]]
 name = "rlibc"
@@ -46,12 +29,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "syntaxext_lint"
 version = "0.1.4"
-source = "git+https://github.com/Gyscos/syntaxext_lint#3efa011a323d6e81f9e2f2ba4209c5c28f8cb9c9"
+source = "git+https://github.com/archaelus/syntaxext_lint#26e7dee7355194e32dc8afbe835bd10fe8322ba6"
 
 [[package]]
 name = "volatile_cell"
 version = "1.0.0"
-source = "git+https://github.com/Gyscos/zinc.git?branch=crazy#14dce59267cb38d51b19584d20b2796dcc67b98d"
 dependencies = [
  "rust-libcore 0.0.3 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -59,11 +41,10 @@ dependencies = [
 [[package]]
 name = "zinc"
 version = "0.1.0"
-source = "git+https://github.com/Gyscos/zinc.git?branch=crazy#14dce59267cb38d51b19584d20b2796dcc67b98d"
 dependencies = [
- "ioreg 0.1.0 (git+https://github.com/Gyscos/zinc.git?branch=crazy)",
+ "ioreg 0.1.0",
  "rlibc 0.1.4 (git+https://github.com/hackndev/rlibc?branch=zinc)",
  "rust-libcore 0.0.3 (registry+https://github.com/rust-lang/crates.io-index)",
- "volatile_cell 1.0.0 (git+https://github.com/Gyscos/zinc.git?branch=crazy)",
+ "volatile_cell 1.0.0",
 ]
 

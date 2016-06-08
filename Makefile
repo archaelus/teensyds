@@ -8,16 +8,21 @@ TARGET=thumbv7em-none-eabi
 
 # Files
 OUT_DIR=target/$(TARGET)/release
-OUT_FILE=$(OUT_DIR)/blink
+OUT_FILE=$(OUT_DIR)/cli
 
-.PHONY: build clean listing load
+.PHONY: build clean listing load realclean debug
 
 all: build listing
 build: $(OUT_FILE).hex
-listing: $(OUT_FILE).lst
+listing: $(OUT_FILE).lst $(OUT_FILE).S
 
-$(OUT_FILE):
+$(OUT_FILE): $(wildcard *.rs Cargo.*)
 	cargo build --release --target=$(TARGET) --verbose
+	arm-none-eabi-size -A $@
+
+debug:
+	cargo build --target=$(TARGET) --verbose
+	$(OBJDUMP) -S target/$(TARGET)/debug/cli > cli.S
 
 $(OUT_DIR)/%.hex: $(OUT_DIR)/%
 	$(OBJCOPY) -O ihex $< $@
@@ -25,7 +30,13 @@ $(OUT_DIR)/%.hex: $(OUT_DIR)/%
 $(OUT_DIR)/%.lst: $(OUT_DIR)/%
 	$(OBJDUMP) -D $< > $@
 
+$(OUT_DIR)/%.S: $(OUT_DIR)/%
+	$(OBJDUMP) -S $< > $@
+
 clean:
+	rm $(OUT_FILE)
+
+realclean:
 	cargo clean
 
 load: $(OUT_FILE).hex

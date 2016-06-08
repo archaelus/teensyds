@@ -1,31 +1,20 @@
 [package]
-name = "teensyr"
+name = "teensycli"
 version = "0.1.0"
 authors = ["Geoff Cant <nem@erlang.geek.nz>", "Paul Osborne <osbpau@gmail.com>"]
 
 [dependencies.zinc]
-git = "https://github.com/Gyscos/zinc.git"
-branch = "crazy"
+path = "../zinc"
+#git = "https://github.com/archaelus/zinc.git"
+#branch = "k20_72"
 features = ["mcu_k20"]
-
-[dependencies.macro_platformtree]
-git = "https://github.com/Gyscos/zinc.git"
-branch = "crazy"
-path = "macro_platformtree"
-
-[dependencies.ioreg]
-git = "https://github.com/Gyscos/zinc.git"
-branch = "crazy"
-path = "ioreg"
-
-[dependencies.platformtree]
-git = "https://github.com/Gyscos/zinc.git"
-branch = "crazy"
-path = "platformtree"
 
 [dependencies.rust-libcore]
 version = "*"
 
+[profile.dev]
+debug = true
+
 [[bin]]
-name = "blink"
-path = "blink.rs"
+name = "cli"
+path = "cli.rs"
