@@ -1,5 +1,5 @@
 [root]
-name = "teensycli"
+name = "teensyds"
 version = "0.1.0"
 dependencies = [
  "rust-libcore 0.0.3 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -9,9 +9,6 @@ dependencies = [
 [[package]]
 name = "ioreg"
 version = "0.1.0"
-dependencies = [
- "syntaxext_lint 0.1.4 (git+https://github.com/archaelus/syntaxext_lint)",
-]
 
 [[package]]
 name = "rlibc"
@@ -25,11 +22,6 @@ dependencies = [
 name = "rust-libcore"
 version = "0.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-
-[[package]]
-name = "syntaxext_lint"
-version = "0.1.4"
-source = "git+https://github.com/archaelus/syntaxext_lint#26e7dee7355194e32dc8afbe835bd10fe8322ba6"
 
 [[package]]
 name = "volatile_cell"

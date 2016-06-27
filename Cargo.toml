@@ -1,5 +1,5 @@
 [package]
-name = "teensycli"
+name = "teensyds"
 version = "0.1.0"
 authors = ["Geoff Cant <nem@erlang.geek.nz>", "Paul Osborne <osbpau@gmail.com>"]
 
@@ -16,5 +16,5 @@ version = "*"
 debug = true
 
 [[bin]]
-name = "cli"
-path = "cli.rs"
+name = "dotstar"
+path = "dotstar.rs"

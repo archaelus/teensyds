@@ -8,7 +8,7 @@ TARGET=thumbv7em-none-eabi
 
 # Files
 OUT_DIR=target/$(TARGET)/release
-OUT_FILE=$(OUT_DIR)/cli
+OUT_FILE=$(OUT_DIR)/dotstar
 
 .PHONY: build clean listing load realclean debug
 
@@ -22,7 +22,7 @@ $(OUT_FILE): $(wildcard *.rs Cargo.*)
 
 debug:
 	cargo build --target=$(TARGET) --verbose
-	$(OBJDUMP) -S target/$(TARGET)/debug/cli > cli.S
+	$(OBJDUMP) -S target/$(TARGET)/debug/dotstar > cli.S
 
 $(OUT_DIR)/%.hex: $(OUT_DIR)/%
 	$(OBJCOPY) -O ihex $< $@
