@@ -2,6 +2,7 @@
 name = "teensyds"
 version = "0.1.0"
 dependencies = [
+ "log 0.3.6 (git+https://github.com/archaelus/log.git?branch=zinc)",
  "rust-libcore 0.0.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "zinc 0.1.0",
 ]
@@ -9,6 +10,14 @@ dependencies = [
 [[package]]
 name = "ioreg"
 version = "0.1.0"
+
+[[package]]
+name = "log"
+version = "0.3.6"
+source = "git+https://github.com/archaelus/log.git?branch=zinc#2eb672c76686ad39053d65525393d2882173ead3"
+dependencies = [
+ "rust-libcore 0.0.3 (registry+https://github.com/rust-lang/crates.io-index)",
+]
 
 [[package]]
 name = "rlibc"
@@ -35,6 +44,7 @@ name = "zinc"
 version = "0.1.0"
 dependencies = [
  "ioreg 0.1.0",
+ "log 0.3.6 (git+https://github.com/archaelus/log.git?branch=zinc)",
  "rlibc 0.1.4 (git+https://github.com/hackndev/rlibc?branch=zinc)",
  "rust-libcore 0.0.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "volatile_cell 1.0.0",

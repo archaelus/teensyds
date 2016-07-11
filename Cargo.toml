@@ -3,17 +3,26 @@ name = "teensyds"
 version = "0.1.0"
 authors = ["Geoff Cant <nem@erlang.geek.nz>", "Paul Osborne <osbpau@gmail.com>"]
 
+[dependencies.log]
+git = "https://github.com/archaelus/log.git"
+branch = "zinc"
+default-features = false
+
 [dependencies.zinc]
 path = "../zinc"
 #git = "https://github.com/archaelus/zinc.git"
 #branch = "k20_72"
-features = ["mcu_k20"]
+features = ["mcu_k20", "loglib"]
 
 [dependencies.rust-libcore]
 version = "*"
 
 [profile.dev]
 debug = true
+
+[lib]
+name = "teensy"
+path = "lib.rs"
 
 [[bin]]
 name = "dotstar"
